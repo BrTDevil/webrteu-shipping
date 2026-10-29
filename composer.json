@@ -10,12 +10,12 @@
         "courier",
         "awb"
     ],
-    "homepage": "https://github.com/WeBRTeu/shipping",
+    "homepage": "https://github.com/BrTDevil/webrteu-shipping",
     "authors": [
         {
             "name": "WeBRTeu",
             "email": "pfa.razvan.bodnariu@gmail.com",
-            "homepage": "https://webrteu.eu"
+            "homepage": "https://webrt.eu"
         }
     ],
     "require": {
