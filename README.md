@@ -1,7 +1,7 @@
 # webrteu/shipping
 
 [![PHP](https://img.shields.io/badge/PHP-%5E8.2-777bb4)](https://www.php.net/)
-[![Laravel](https://img.shields.io/badge/Laravel-11%E2%80%9313-ff2d20)](https://laravel.com/)
+[![Laravel](https://img.shields.io/badge/Laravel-12%E2%80%9313-ff2d20)](https://laravel.com/)
 [![Licență MIT](https://img.shields.io/badge/licen%C8%9B%C4%83-MIT-green)](LICENSE.md)
 [![Packagist](https://img.shields.io/packagist/v/webrteu/shipping)](https://packagist.org/packages/webrteu/shipping)
 
@@ -14,7 +14,7 @@ Nu este un pachet oficial al vreunui curier.
 ## Cerințe
 
 - PHP `^8.2`
-- Laravel 11, 12 sau 13
+- Laravel 12 sau 13
 - cel puțin un pachet de curier instalat (altfel `Shipping::carrier()` aruncă `ShippingException`)
 
 ## Instalare
