@@ -1,0 +1,71 @@
+{
+    "name": "webrteu/shipping",
+    "description": "Core shipping abstraction for Romanian couriers in Laravel",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "romania", "shipping", "courier", "awb"],
+    "homepage": "https://github.com/WeBRTeu/shipping",
+    "authors": [
+        {
+            "name": "WeBRTeu",
+            "email": "pfa.razvan.bodnariu@gmail.com",
+            "homepage": "https://webrteu.eu"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/console": "^11.0|^12.0|^13.0",
+        "illuminate/database": "^11.0|^12.0|^13.0",
+        "illuminate/http": "^11.0|^12.0|^13.0",
+        "illuminate/queue": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.18",
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "peckphp/peck": "^0.3",
+        "pestphp/pest": "^3.0|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0",
+        "pestphp/pest-plugin-type-coverage": "^3.0|^4.0",
+        "phpstan/phpstan": "^2.3.3,!=2.3.4",
+        "rector/rector": "^2.0"
+    },
+    "autoload": {
+        "psr-4": { "WeBRTeu\\Shipping\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "WeBRTeu\\Shipping\\Tests\\": "tests/" }
+    },
+    "extra": {
+        "laravel": {
+            "providers": ["WeBRTeu\\Shipping\\ShippingServiceProvider"],
+            "aliases": { "Shipping": "WeBRTeu\\Shipping\\Facades\\Shipping" }
+        }
+    },
+    "scripts": {
+        "setup": "@composer install",
+        "lint": ["rector", "pint --parallel"],
+        "test:lint": ["pint --parallel --test", "rector --dry-run"],
+        "test:spelling": "peck",
+        "test:type-coverage": "pest --type-coverage --min=100",
+        "test:types": "phpstan analyse --memory-limit=1G",
+        "test:arch": "pest tests/Arch",
+        "test:unit": "XDEBUG_MODE=coverage pest --parallel --coverage --exactly=100.0",
+        "test:unit:sequential": "XDEBUG_MODE=coverage pest --coverage --exactly=100.0",
+        "test": [
+            "@test:lint",
+            "@test:spelling",
+            "@test:type-coverage",
+            "@test:types",
+            "@test:arch",
+            "@test:unit"
+        ]
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": { "pestphp/pest-plugin": true }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
